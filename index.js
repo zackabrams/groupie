@@ -26,7 +26,7 @@ bot.on('start', function(data) {
 
 bot.on('message', function(data) {
     var params = {
-        icon_emoji: ':robot_face:'
+        icon_emoji: ':robot_face:',
         link_names: 'true'
     };
 
