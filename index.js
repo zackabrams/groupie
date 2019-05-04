@@ -18,7 +18,7 @@ bot.on('start', function(data) {
     };
 
     // define channel, where bot exist. You can adjust it there https://my.slack.com/services
-    bot.postMessageToChannel('shhhhtesting', "Hello! I'm starting. Did something go wrong? @zackbot", params);
+    bot.postMessageToChannel('shhhhtesting', "Hello! I'm starting. Did something go wrong? @zackbot ", params);
 
     channellist = bot.getChannels();
 
@@ -42,7 +42,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "Beep Boop! Hey @ board @zackbot! "+username+" summoned you, saying:"+data.text.replace("@board","");
+        messagetext = "Beep Boop! Hey @ board @zackbot ! "+username+" summoned you, saying:"+data.text.replace("@board","");
         bot.postMessageToChannel(channelname, messagetext, params);
         return;
     };
