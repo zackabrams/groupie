@@ -5,7 +5,7 @@ var SlackBot = require('slackbots');
 // create a bot
 const envKey = process.env.GROUPIE_BOT_TOKEN
 var bot = new SlackBot({
-  token: GROUPIE_BOT_TOKEN,
+  token: envKey,
   name: 'groupie'
 })
 
