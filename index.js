@@ -13,7 +13,7 @@ var bot = new SlackBot({
 bot.on('start', function(data) {
     // more information about additional params https://api.slack.com/methods/chat.postMessage
     var params = {
-        icon_emoji: ':robot_face:'
+        icon_emoji: ':robot_face:',
         link_names: 'true'
     };
 
