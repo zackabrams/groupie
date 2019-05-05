@@ -47,7 +47,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "Beep Boop! Hey @ board @zackbot ! "+username+" summoned you, saying:"+data.text.replace("@board","");
+        messagetext = "Beep Boop! Hey board! <@U785MEX0V>, <@U7832H892>, <U78EQEDD2>! "+username+" summoned you, saying:"+data.text.replace("@board","");
         bot.postMessageToChannel(channelname, messagetext, params);
         return;
     };
@@ -64,7 +64,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "Beep Boop! Hey @ dailies! "+username+" summoned you, saying:"+data.text.replace("@dailies","");
+        messagetext = "Beep Boop! Hey dailies and deputies! <@UD0CKAYTH>, <@UCTUX5AD6>, <@UFX7SR7BP>, <@UCZ3XK76Y>, <@UCU3QTDFT>, <@UFKQT8G49>, <@UFWSWLKB6>, <@UCULW68G2>, <@UD0BU6FSB>! "+username+" summoned you, saying:"+data.text.replace("@dailies","");
         bot.postMessageToChannel(channelname, messagetext, params);
         return;
     };
