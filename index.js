@@ -1,11 +1,12 @@
 
 
 var SlackBot = require('slackbots');
+var fs = require('fs');
 
 // create a bot
 const envKey = process.env.token
 var bot = new SlackBot({
-  token: envKey,
+  token: 'xoxb-10509955653-615053889555-JnYogY86yRALZJwn9N649QX0',
   name: 'groupie'
 })
 
@@ -16,7 +17,11 @@ bot.on('start', function(data) {
         icon_emoji: ':robot_face:',
         link_names: 'true'
     };
-
+  daataa = bot.getUsers()._value.members
+  fs.writeFile('Output.txt', JSON.stringify(daataa), function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
     // define channel, where bot exist. You can adjust it there https://my.slack.com/services
     bot.postMessageToChannel('shhhhtesting', "Hello! I'm starting.", params);
 
@@ -76,7 +81,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "Beep Boop! Hey @ social media team! "+username+" summoned you, saying:"+data.text.replace("@social","");
+        messagetext = "Beep Boop! Hey social team, <@UD0KZERSA>, <@UD02MNUDR>, <@UCZ5HD85A>, and <@U7J4GSQTB>! "+username+" summoned you, saying:"+data.text.replace("@social","");
         bot.postMessageToChannel(channelname, messagetext, params);
         return;
     };
