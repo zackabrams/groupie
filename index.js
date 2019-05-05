@@ -47,7 +47,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "Beep Boop! Hey board! <@U785MEX0V>, <@U7832H892>, <U78EQEDD2>! "+username+" summoned you, saying:"+data.text.replace("@board","");
+        messagetext = "Beep Boop! Hey board! <@U785MEX0V>, <@U7832H892>, <@U78EQEDD2>! "+username+" summoned you, saying:"+data.text.replace("@board","");
         bot.postMessageToChannel(channelname, messagetext, params);
         return;
     };
