@@ -7,7 +7,7 @@ var mykey = config.MY_KEY;
 // create a bot
 const envKey = process.env.token
 var bot = new SlackBot({
-  token: mykey,
+  token: token,
   name: 'groupie'
 })
 
