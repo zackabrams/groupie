@@ -6,7 +6,7 @@ var fs = require('fs');
 // create a bot
 const envKey = process.env.token
 var bot = new SlackBot({
-  token: 'xoxb-10509955653-615053889555-JnYogY86yRALZJwn9N649QX0',
+  token: 'xoxb-10509955653-615053889555-Pm2Q5NNBUPlAP0KoJV4KtUuT',
   name: 'groupie'
 })
 
