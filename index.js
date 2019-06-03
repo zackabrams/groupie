@@ -2,11 +2,12 @@
 
 var SlackBot = require('slackbots');
 var fs = require('fs');
+var mykey = config.MY_KEY;
 
 // create a bot
 const envKey = process.env.token
 var bot = new SlackBot({
-  token: 'xoxb-10509955653-615053889555-Pm2Q5NNBUPlAP0KoJV4KtUuT',
+  token: mykey,
   name: 'groupie'
 })
 
