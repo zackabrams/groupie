@@ -4,11 +4,11 @@ var fs = require('fs');
 
 // create a bot
 const token1 = process.env.GROUPIE_BOT_TOKEN
-print(token1)
+console.log(token1);
 var bot = new SlackBot({
   token: token1,
   name: 'groupie'
-})
+});
 
 
 bot.on('start', function(data) {
