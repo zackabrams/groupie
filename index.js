@@ -3,7 +3,7 @@ var SlackBot = require('slackbots');
 var fs = require('fs');
 
 // create a bot
-const token1 = process.env.GROUPIE_BOT_TOKEN
+const token1 = process.env.BWOGTOKEN
 console.log(token1);
 var bot = new SlackBot({
   token: token1,
