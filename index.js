@@ -69,6 +69,7 @@ bot.on('message', function(data) {
         	dayOfWeek = weekday[objToday.getDay()];
 
         console.log(dayOfWeek);
+        console.log(objToday.toLocaleString())
 
         if(dayOfWeek == 'Monday') {
           messagetext = "Beep Boop! Hey Monday daily <@UN7AMR049>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
