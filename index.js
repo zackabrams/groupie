@@ -49,7 +49,69 @@ bot.on('message', function(data) {
 
         messagetext = "Beep Boop! Hey board, <@U785MEX0V>, <@U7832H892>, <@U78EQEDD2>, <@UA43094KW>, <@UA4RB4SDU>! "+username+" summoned you, saying:"+data.text.replace("@board","");
         bot.postMessageToChannel(channelname, messagetext, params);
-        return;
+
+    };
+
+    if (data.type === 'message' && data.text.includes('@daily')) {
+        userlist = bot.getUsers();
+        userarray = userlist._value.members;
+        obj1 = userarray.find(o => o.id === data.user);
+        username = obj1.profile.first_name;
+
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        console.log(obj2);
+        channelname = obj2.name;
+
+        var objToday = new Date(),
+        	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+        	dayOfWeek = weekday[objToday.getDay()];
+
+        console.log(dayOfWeek);
+
+        if(dayOfWeek == 'Monday') {
+          messagetext = "Beep Boop! Hey Monday daily <@UN7AMR049>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          bot.postMessageToChannel(channelname, messagetext, params);
+
+        }
+
+        if(dayOfWeek == 'Tuesday') {
+          messagetext = "Beep Boop! Hey Tuesday daily <@UN7AMPCJV>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          bot.postMessageToChannel(channelname, messagetext, params);
+
+        }
+
+        if(dayOfWeek == 'Wednesday') {
+          messagetext = "Beep Boop! Hey Wednedsay daily <@UNDNUTM9T>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          bot.postMessageToChannel(channelname, messagetext, params);
+
+        }
+
+        if(dayOfWeek == 'Thursday') {
+          messagetext = "Beep Boop! Hey Thursday daily <@UNDNUUA05>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          bot.postMessageToChannel(channelname, messagetext, params);
+
+        }
+
+        if(dayOfWeek == 'Friday') {
+          messagetext = "Beep Boop! Hey Friday daily <@UN7AMT1B3>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          bot.postMessageToChannel(channelname, messagetext, params);
+
+        }
+
+        if(dayOfWeek == 'Saturday') {
+          messagetext = "Beep Boop! Hey Saturday daily <@UN7AMTS2D>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          bot.postMessageToChannel(channelname, messagetext, params);
+
+        }
+
+        if(dayOfWeek == 'Sunday') {
+          messagetext = "Beep Boop! Hey Sunday daily <@UN0VANWMQ>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          bot.postMessageToChannel(channelname, messagetext, params);
+
+        }
+
     };
 
     if (data.type === 'message' && data.text.includes('@dailies')) {
@@ -66,7 +128,7 @@ bot.on('message', function(data) {
 
         messagetext = "Beep Boop! Hey dailies and deputies, <@UD0CKAYTH>, <@UCTUX5AD6>, <@UFX7SR7BP>, <@UCZ3XK76Y>, <@UCU3QTDFT>, <@UFKQT8G49>, <@UFWSWLKB6>, <@UCULW68G2>, <@UD0BU6FSB>! "+username+" summoned you, saying:"+data.text.replace("@dailies","");
         bot.postMessageToChannel(channelname, messagetext, params);
-        return;
+
     };
 
     if (data.type === 'message' && data.text.includes('@social')) {
@@ -83,7 +145,7 @@ bot.on('message', function(data) {
 
         messagetext = "Beep Boop! Hey social team, <@UD02MNUDR> and <@U7J4GSQTB>! "+username+" summoned you, saying:"+data.text.replace("@social","");
         bot.postMessageToChannel(channelname, messagetext, params);
-        return;
+
     };
 
     if (data.type === 'message' && data.text.includes('@testing')) {
@@ -100,7 +162,7 @@ bot.on('message', function(data) {
 
         messagetext = "This is a test <@"+data.user+">";
         bot.postMessageToChannel(channelname, messagetext, params);
-        return;
+
     };
 
     if (data.type === 'message' && data.text.includes('@tech')) {
@@ -117,6 +179,6 @@ bot.on('message', function(data) {
 
         messagetext = "Beep Boop! Hey tech team, <@UHZQ8NCG6>, <@UHVASG2MS>, and <@UHVRD36G4>! "+username+" summoned you, saying:"+data.text.replace("@tech","");
         bot.postMessageToChannel(channelname, messagetext, params);
-        return;
+
     };
 });
