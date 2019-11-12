@@ -4,9 +4,8 @@ var fs = require('fs');
 
 // create a bot
 const token1 = process.env.BWOGTOKEN
-console.log(token1);
 var bot = new SlackBot({
-  token: token1,
+  token: 'xoxb-10509955653-615053889555-XwFckqeMFoBaAHLXuVYOfc2K',
   name: 'groupie'
 });
 
@@ -115,22 +114,6 @@ bot.on('message', function(data) {
 
     };
 
-    if (data.type === 'message' && data.text.includes('@dailies')) {
-        userlist = bot.getUsers();
-        userarray = userlist._value.members;
-        obj1 = userarray.find(o => o.id === data.user);
-        username = obj1.profile.first_name;
-
-        chanellist = bot.getChannels();
-        channelarray = channellist._value.channels;
-        obj2 = channelarray.find(o => o.id === data.channel);
-        console.log(obj2);
-        channelname = obj2.name;
-
-        messagetext = "Beep Boop! Hey dailies and deputies, <@UD0CKAYTH>, <@UCTUX5AD6>, <@UFX7SR7BP>, <@UCZ3XK76Y>, <@UCU3QTDFT>, <@UFKQT8G49>, <@UFWSWLKB6>, <@UCULW68G2>, <@UD0BU6FSB>! "+username+" summoned you, saying:"+data.text.replace("@dailies","");
-        bot.postMessageToChannel(channelname, messagetext, params);
-
-    };
 
     if (data.type === 'message' && data.text.includes('@social')) {
         userlist = bot.getUsers();
@@ -144,7 +127,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "Beep Boop! Hey social team, <@UD02MNUDR> and <@U7J4GSQTB>! "+username+" summoned you, saying:"+data.text.replace("@social","");
+        messagetext = "Beep Boop! Hey social team, <@UD02MNUDR>, <@UNE013Y20>, <@UNE1D2AJG>, <@UNEDRD9CY>! "+username+" summoned you, saying:"+data.text.replace("@social","");
         bot.postMessageToChannel(channelname, messagetext, params);
 
     };
