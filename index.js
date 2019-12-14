@@ -46,6 +46,18 @@ bot.on('message', function(data) {
         bot.postMessageToChannel(channelname, messagetext, params);
     };
   
+    if (data.type === 'message' && data.user === 'UNGKVBBAS') {
+
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        console.log(obj2);
+        channelname = obj2.name;
+
+        messagetext = "<@UNGKVBBAS> has not yet fulfilled her post requirements.";
+        bot.postMessageToChannel(channelname, messagetext, params);
+    };
+  
   
 
     if (data.type === 'message' && data.text.includes('@board')) {
