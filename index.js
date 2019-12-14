@@ -58,7 +58,7 @@ bot.on('message', function(data) {
         bot.postMessageToChannel(channelname, messagetext, params);
     };
   
-    if (data.type === 'message' && data.user === 'UNEDRD9CY') {
+    if (data.type === 'message' && data.user === 'UNEDRD9CY' || data.user === 'UD0TXJXB5') {
 
         chanellist = bot.getChannels();
         channelarray = channellist._value.channels;
