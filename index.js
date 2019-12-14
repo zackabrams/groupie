@@ -58,6 +58,19 @@ bot.on('message', function(data) {
         bot.postMessageToChannel(channelname, messagetext, params);
     };
   
+    if (data.type === 'message' && data.user === 'UNEDRD9CY') {
+
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        console.log(obj2);
+        channelname = obj2.name;
+
+        messagetext = "Damn, who's that hunk in your profile pic?? :tired_face:";
+        bot.postMessageToChannel(channelname, messagetext, params);
+    };
+    
+  
     if (data.type === 'message' && data.user === 'UNGKVBBAS') {
 
         chanellist = bot.getChannels();
