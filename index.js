@@ -34,7 +34,41 @@ bot.on('message', function(data) {
         link_names: 'true'
     };
   
+    if (data.type === 'message' && data.user === 'UNE013Y20') {
+
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        console.log(obj2);
+        channelname = obj2.name;
+
+        messagetext = "^This is Nicki Camberg";
+        bot.postMessageToChannel(channelname, messagetext, params);
+    }; 
   
+    if (data.type === 'message' && data.user === 'U7832H892') {
+
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        console.log(obj2);
+        channelname = obj2.name;
+
+        messagetext = "^This is Zoe Sottile";
+        bot.postMessageToChannel(channelname, messagetext, params);
+    }; 
+    
+    if (data.type === 'message' && data.user === 'UD0TXJXB5') {
+
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        console.log(obj2);
+        channelname = obj2.name;
+
+        messagetext = "^This is Jordan Merrill";
+        bot.postMessageToChannel(channelname, messagetext, params);
+    };
 
     if (data.type === 'message' && data.text.includes('@board')) {
         userlist = bot.getUsers();
