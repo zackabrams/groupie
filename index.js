@@ -34,7 +34,7 @@ bot.on('message', function(data) {
         link_names: 'true'
     };
     
-    if (data.type === 'message' && data.creator.includes('U785MEX0V')) {
+    if (data.type === 'message' && data.user === 'U785MEX0V') {
 
         chanellist = bot.getChannels();
         channelarray = channellist._value.channels;
@@ -42,9 +42,8 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "All hail <@U785MEX0V>, the Supreme Leader." summoned you, saying:"+data.text.replace("@board","");
+        messagetext = "All hail <@U785MEX0V>, the Supreme Leader.";
         bot.postMessageToChannel(channelname, messagetext, params);
-
     };
   
   
