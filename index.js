@@ -57,18 +57,6 @@ bot.on('message', function(data) {
         messagetext = "^This is Zoe Sottile";
         bot.postMessageToChannel(channelname, messagetext, params);
     }; 
-    
-    if (data.type === 'message' && data.user === 'U900N9UBC') {
-
-        chanellist = bot.getChannels();
-        channelarray = channellist._value.channels;
-        obj2 = channelarray.find(o => o.id === data.channel);
-        console.log(obj2);
-        channelname = obj2.name;
-
-        messagetext = "^This is Jake Tibbetts";
-        bot.postMessageToChannel(channelname, messagetext, params);
-    };
 
     if (data.type === 'message' && data.text.includes('@board')) {
         userlist = bot.getUsers();
