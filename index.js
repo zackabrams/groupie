@@ -58,18 +58,6 @@ bot.on('message', function(data) {
         bot.postMessageToChannel(channelname, messagetext, params);
     }; 
     
-    if (data.type === 'message' && data.user === 'UD0TXJXB5') {
-
-        chanellist = bot.getChannels();
-        channelarray = channellist._value.channels;
-        obj2 = channelarray.find(o => o.id === data.channel);
-        console.log(obj2);
-        channelname = obj2.name;
-
-        messagetext = "^This is Jordan Merrill";
-        bot.postMessageToChannel(channelname, messagetext, params);
-    };
-    
     if (data.type === 'message' && data.user === 'U900N9UBC') {
 
         chanellist = bot.getChannels();
