@@ -70,6 +70,22 @@ bot.on('message', function(data) {
         bot.postMessageToChannel(channelname, messagetext, params);
     };
  
+    if (data.type === 'message' && data.text.includes('slackbot')) {
+        userlist = bot.getUsers();
+        userarray = userlist._value.members;
+        obj1 = userarray.find(o => o.id === data.user);
+        username = obj1.profile.first_name;
+
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        console.log(obj2);
+        channelname = obj2.name;
+
+        messagetext = "Death To Slackbot! Long Live Groupie!";
+        bot.postMessageToChannel(channelname, messagetext, params);
+
+    };
   
   
 
