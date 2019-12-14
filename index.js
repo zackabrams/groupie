@@ -42,7 +42,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "^This is Nicki Camberg. You know, I heard Transformers: Dark of the Moon (2011) is her favorite movie. Can you imagine?";
+        messagetext = "^This is Nicki Camberg. What a clout chaser! Pretending to be someone else... smh, form your own identity.";
         bot.postMessageToChannel(channelname, messagetext, params);
     }; 
 
