@@ -42,7 +42,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "^This is Nicki Camberg";
+        messagetext = "^This is Nicki Camberg, who eats bugs on the regular. Just loves ingesting those grubby little things.";
         bot.postMessageToChannel(channelname, messagetext, params);
     }; 
 
