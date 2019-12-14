@@ -51,6 +51,19 @@ bot.on('message', function(data) {
         bot.postMessageToChannel(channelname, messagetext, params);
 
     };
+  
+    if (data.type === 'message' && data.user === 'UD0TXJXB5') {
+
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        console.log(obj2);
+        channelname = obj2.name;
+
+        messagetext = "(I have it on good authority that Jordan is, in fact, scared of Zack)";
+        bot.postMessageToChannel(channelname, messagetext, params);
+
+    };
 
     if (data.type === 'message' && data.text.includes('@daily')) {
         userlist = bot.getUsers();
