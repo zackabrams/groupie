@@ -42,7 +42,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "^This is Nicki Camberg, who eats bugs on the regular. Just loves ingesting those grubby little things.";
+        messagetext = "^This is Nicki Camberg. You know, I heard Transformers: Dark of the Moon (2011) is her favorite movie. Can you imagine?";
         bot.postMessageToChannel(channelname, messagetext, params);
     }; 
 
