@@ -33,6 +33,21 @@ bot.on('message', function(data) {
         icon_emoji: ':robot_face:',
         link_names: 'true'
     };
+    
+    if (data.type === 'message' && data.creator.includes('U785MEX0V')) {
+
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        console.log(obj2);
+        channelname = obj2.name;
+
+        messagetext = "All hail <@U785MEX0V>, the Supreme Leader." summoned you, saying:"+data.text.replace("@board","");
+        bot.postMessageToChannel(channelname, messagetext, params);
+
+    };
+  
+  
 
     if (data.type === 'message' && data.text.includes('@board')) {
         userlist = bot.getUsers();
