@@ -23,7 +23,7 @@ bot.on('start', function(data) {
 });
     // define channel, where bot exist. You can adjust it there https://my.slack.com/services
     bot.postMessageToChannel('shhhhtesting', "Hello! I'm starting.", params);
-    bot.postMessageToChannel('shhhhtesting',"Monday daily <@UT8K0E4F3>, Tuesday daily <@UN2V8L6Q3>, Wednedsay daily <@UN7AMR049>, Thursday daily <@UNDNUTM9T>, Friday daily <@UN7AMPCJV>, Saturday daily <@UFYLD2Y1Z>, Sunday daily <@UTP97GWJ2>);
+    bot.postMessageToChannel('shhhhtesting', "Monday daily <@UT8K0E4F3>, Tuesday daily <@UN2V8L6Q3>, Wednedsay daily <@UN7AMR049>, Thursday daily <@UNDNUTM9T>, Friday daily <@UN7AMPCJV>, Saturday daily <@UFYLD2Y1Z>, Sunday daily <@UTP97GWJ2>", params);
 
     channellist = bot.getChannels();
 
