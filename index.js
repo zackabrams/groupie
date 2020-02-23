@@ -73,43 +73,43 @@ bot.on('message', function(data) {
         console.log(objToday.toLocaleString())
 
         if(dayOfWeek == 'Monday') {
-          messagetext = "Beep Boop! Hey Monday daily <@UN7AMR049>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          messagetext = "Beep Boop! Hey Monday daily <@UT8K0E4F3>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
           bot.postMessageToChannel(channelname, messagetext, params);
 
         }
 
         if(dayOfWeek == 'Tuesday') {
-          messagetext = "Beep Boop! Hey Tuesday daily <@UN7AMPCJV>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          messagetext = "Beep Boop! Hey Tuesday daily <@UN2V8L6Q3>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
           bot.postMessageToChannel(channelname, messagetext, params);
 
         }
 
         if(dayOfWeek == 'Wednesday') {
-          messagetext = "Beep Boop! Hey Wednedsay daily <@UNDNUTM9T>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          messagetext = "Beep Boop! Hey Wednedsay daily <@UN7AMR049>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
           bot.postMessageToChannel(channelname, messagetext, params);
 
         }
 
         if(dayOfWeek == 'Thursday') {
-          messagetext = "Beep Boop! Hey Thursday daily <@UNDNUUA05>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          messagetext = "Beep Boop! Hey Thursday daily <@UNDNUTM9T>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
           bot.postMessageToChannel(channelname, messagetext, params);
 
         }
 
         if(dayOfWeek == 'Friday') {
-          messagetext = "Beep Boop! Hey Friday daily <@UN7AMT1B3>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          messagetext = "Beep Boop! Hey Friday daily <@UN7AMPCJV>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
           bot.postMessageToChannel(channelname, messagetext, params);
 
         }
 
         if(dayOfWeek == 'Saturday') {
-          messagetext = "Beep Boop! Hey Saturday daily <@UN7AMTS2D>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          messagetext = "Beep Boop! Hey Saturday daily <@UFYLD2Y1Z>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
           bot.postMessageToChannel(channelname, messagetext, params);
 
         }
 
         if(dayOfWeek == 'Sunday') {
-          messagetext = "Beep Boop! Hey Sunday daily <@UN0VANWMQ>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
+          messagetext = "Beep Boop! Hey Sunday daily <@UTP97GWJ2>! "+username+" summoned you, saying:"+data.text.replace("@daily","");
           bot.postMessageToChannel(channelname, messagetext, params);
 
         }
