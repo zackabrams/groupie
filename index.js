@@ -130,7 +130,7 @@ bot.on('message', function(data) {
         console.log(obj2);
         channelname = obj2.name;
 
-        messagetext = "Beep Boop! Hey social team, <@UD02MNUDR>, <@UNE013Y20>, <@UNE1D2AJG>, <@UNEDRD9CY>! "+username+" summoned you, saying:"+data.text.replace("@social","");
+        messagetext = "Beep Boop! Hey social team, <@UD02MNUDR>, <@UNE013Y20>, <@UNE1D2AJG>! "+username+" summoned you, saying:"+data.text.replace("@social","");
         bot.postMessageToChannel(channelname, messagetext, params);
 
     };
