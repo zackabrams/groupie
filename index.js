@@ -9,6 +9,16 @@ var bot = new SlackBot({
   name: 'groupie'
 });
 
+bot.postReactionToChannel = function(id, emoji, ts, params) {
+    params = {
+        channel: id,
+        name: emoji,
+        timestamp: ts
+    }, params || {};
+
+    return this._api('reactions.add', params);
+};
+
 
 bot.on('start', function(data) {
     // more information about additional params https://api.slack.com/methods/chat.postMessage
@@ -34,6 +44,22 @@ bot.on('message', function(data) {
         icon_emoji: ':robot_face:',
         link_names: 'true'
     };
+  
+    if (data.type === 'message' && data.text.includes('parrot') || data.text.includes('parrots')) {
+        chanellist = bot.getChannels();
+        channelarray = channellist._value.channels;
+        obj2 = channelarray.find(o => o.id === data.channel);
+        // console.log(obj2);
+        channelname = obj2.name;
+        var parrots = ["parrot","angelparrot","angryparrot","aussiecongaparrot","aussieparrot","aussiereversecongaparrot","bananaparrot","beretparrot","birthdaypartyparrot","blondesassyparrot","bluescluesparrot","bluntparrot","boredparrot","ceilingparrot","chillparrot","christmasparrot","coffeeparrot","confusedparrot","congaparrot","congapartyparrot","cryptoparrot","darkbeerparrot","dealwithitparrot","discoparrot","donutparrot","dreidelparrot","evilparrot","explodyparrot","fastparrot","fidgetparrot","fiestaparrot","flyingmoneyparrot","gentlemanparrot","gothparrot","halalparrot","hamburgerparrot","hardhatparrot","harrypotterparrot","ice-cream-parrot","invisibleparrot","jediparrot","loveparrot","luckyparrot","mardigrasparrot","margaritaparrot","matrixparrot","middleparrot","moonwalkingparrot","oldtimeyparrot","papalparrot","parrot","parrotbeer","parrotcop","parrotdad","parrotmustache","parrotsleep","parrotwave1","parrotwave2","parrotwave3","parrotwave4","parrotwave5","parrotwave6","parrotwave7","partyparrot","pirateparrot","pizzaparrot","popcornparrot","portalparrot","prideparrot","pumpkinparrot","reversecongaparrot","revolutionparrot","rightparrot","rotatingparrot","ryangoslingparrot","sadparrot","sassyparrot","scienceparrot","shipitparrot","shufflefurtherparrot","shuffleparrot","sintparrot","sithparrot","skiparrot","slomoparrot","slowparrot","sovjetparrot","stableparrot","stalkerparrot","sushiparrot","tacoparrot","thumbsupparrot","tripletsparrot","twinsparrot","ultrafastparrot","upvotepartyparrot","wendyparrot"]
+
+
+        i = 0;
+        while (i < 30) {
+          var randomParrot = parrots[Math.floor(Math.random()*parrots.length)];
+          bot.postReactionToChannel(data.channel, randomParrot, data.ts);
+          i++;
+        }
  
 
     if (data.type === 'message' && data.text.includes('@board')) {
