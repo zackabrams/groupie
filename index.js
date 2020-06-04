@@ -60,6 +60,7 @@ bot.on('message', function(data) {
           bot.postReactionToChannel(data.channel, randomParrot, data.ts);
           i++;
         }
+    };
  
 
     if (data.type === 'message' && data.text.includes('@board')) {
