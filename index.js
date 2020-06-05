@@ -45,7 +45,7 @@ bot.on('message', function(data) {
         link_names: 'true'
     };
   
-    if (data.type === 'message' && data.text.includes('parrot') || data.text.includes('parrots')) {
+    if (data.type === 'message' && !data.text.includes(':parrot') && !data.text.includes('parrot:') && data.text.includes('parrot') || data.text.includes('parrots')) {
         chanellist = bot.getChannels();
         channelarray = channellist._value.channels;
         obj2 = channelarray.find(o => o.id === data.channel);
