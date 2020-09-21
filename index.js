@@ -9,6 +9,7 @@ const token1 = process.env.BWOGTOKEN;
 const board = process.env.BOARD;
 const social = process.env.SOCIAL;
 const tech = process.env.TECH;
+const news = process.env.NEWS;
 const monday = process.env.MONDAY;
 const tuesday = process.env.TUESDAY;
 const wednesday = process.env.WEDNESDAY;
@@ -90,6 +91,13 @@ bot.on('message', function(data) {
     if (data.type === 'message' && data.text.includes('@tech')) {
       var arr = getUserAndChannel(data.user,data.channel)
       messagetext = "Beep Boop! Hey tech team, "+tech+"! "+arr[0]+" summoned you, saying: "+data.text.replace("@tech","");
+      bot.postMessageToChannel(arr[1], messagetext, params);
+    }
+  
+    //@news
+    if (data.type === 'message' && data.text.includes('@news')) {
+      var arr = getUserAndChannel(data.user,data.channel)
+      messagetext = "Beep Boop! Hey news team, "+news+"! "+arr[0]+" summoned you, saying: "+data.text.replace("@news","");
       bot.postMessageToChannel(arr[1], messagetext, params);
     }
 
