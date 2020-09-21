@@ -51,14 +51,18 @@ bot.on('start', function(data) {
   // });
 
   //Startup message
-  bot.postMessageToChannel('shhhhtesting',"Hello! I'm starting.", params);
+  bot.postTo('shhhhtesting',"Hello! I'm starting.", params);
 });
 
 //Function to find who triggered groupie and in what channel
 function getUserAndChannel(user,channel){
   username = bot.getUsers()._value.members.find(o => o.id === user).profile.first_name;
-  channelname = bot.getChannels()._value.channels.find(o => o.id === channel).name;
-
+  try {
+    channelname = bot.getChannels()._value.channels.find(o => o.id === channel).name;
+  }
+  catch {
+    channelname = bot.getGroups()._value.groups.find(o => o.id === channel).name;
+  }
   return [username, channelname]
 };
 
@@ -70,35 +74,35 @@ bot.on('message', function(data) {
     if (data.type === 'message' && data.text.includes('@testing')) {
       var arr = getUserAndChannel(data.user,data.channel)
       messagetext = "This is a test <@"+data.user+">"
-      bot.postMessageToChannel(arr[1], messagetext, params);
+      bot.postTo(arr[1], messagetext, params);
     }
 
     //@board
     if (data.type === 'message' && data.text.includes('@board')) {
       var arr = getUserAndChannel(data.user,data.channel)
       messagetext = "Beep Boop! Hey board, "+board+"! "+arr[0]+" summoned you, saying: "+data.text.replace("@board","");
-      bot.postMessageToChannel(arr[1], messagetext, params);
+      bot.postTo(arr[1], messagetext, params);
     }
 
     //@social
     if (data.type === 'message' && data.text.includes('@social')) {
       var arr = getUserAndChannel(data.user,data.channel)
       messagetext = "Beep Boop! Hey social team, "+social+"! "+arr[0]+" summoned you, saying: "+data.text.replace("@social","");
-      bot.postMessageToChannel(arr[1], messagetext, params);
+      bot.postTo(arr[1], messagetext, params);
     }
 
     //@tech
     if (data.type === 'message' && data.text.includes('@tech')) {
       var arr = getUserAndChannel(data.user,data.channel)
       messagetext = "Beep Boop! Hey tech team, "+tech+"! "+arr[0]+" summoned you, saying: "+data.text.replace("@tech","");
-      bot.postMessageToChannel(arr[1], messagetext, params);
+      bot.postTo(arr[1], messagetext, params);
     }
   
     //@news
     if (data.type === 'message' && data.text.includes('@news')) {
       var arr = getUserAndChannel(data.user,data.channel)
       messagetext = "Beep Boop! Hey news team, "+news+"! "+arr[0]+" summoned you, saying: "+data.text.replace("@news","");
-      bot.postMessageToChannel(arr[1], messagetext, params);
+      bot.postTo(arr[1], messagetext, params);
     }
 
     //@daily
@@ -119,6 +123,6 @@ bot.on('message', function(data) {
       dict.set("Saturday", saturday);
 
       messagetext = "Beep Boop! Hello "+td+" daily "+dict.get(td)+"! "+username+" summoned you, saying:"+data.text.replace("@daily","");
-      bot.postMessageToChannel(channelname, messagetext, params);
+      bot.postTo(channelname, messagetext, params);
     }
 });
